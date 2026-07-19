@@ -1,0 +1,25 @@
+# Virtual environments
+venv/
+.venv/
+
+# Python caches
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# macOS
+.DS_Store
+
+# Data files are downloaded separately (see data/README.md)
+data/*
+!data/README.md
+!data/.gitkeep
+
+# Generated outputs (figures and result arrays are reproduced by the pipeline)
+outputs/*
+!outputs/summary*.txt
+!outputs/.gitkeep

@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tts-sdk"
+version = "3.0.0"
+description = "Supplementary code for 'The Theory of Temporal Spheres' (TTS v3.0): dodecahedral H0 anisotropy and CMB matched-circle search"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Eva Moss", email = "eva@m0ss.io" },
+    { name = "Jean-Pierre Luminet" },
+]
+keywords = [
+    "cosmology",
+    "cosmic-topology",
+    "Poincare-dodecahedral-space",
+    "Hubble-constant",
+    "CMB",
+    "Pantheon+",
+]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = [
+    "numpy>=2.0",
+    "scipy>=1.14",
+    "pandas>=2.2",
+    "matplotlib>=3.9",
+    "seaborn>=0.13",
+    "healpy>=1.17",
+    "tqdm>=4.66",
+    "joblib>=1.4",
+]
+
+[project.urls]
+Repository = "https://github.com/psldm/tts-sdk"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

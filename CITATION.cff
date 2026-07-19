@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "tts-sdk: Dodecahedral Anisotropy in the Local Hubble Flow and CMB Matched-Circle Search"
+version: 3.0.0
+date-released: 2026-07-19
+license: MIT
+repository-code: "https://github.com/psldm/tts-sdk"
+authors:
+  - family-names: "Moss"
+    given-names: "Eva"
+    affiliation: "RAD Systems"
+  - family-names: "Luminet"
+    given-names: "Jean-Pierre"
+    affiliation: "CNRS / LUTH, Observatoire de Paris"
+references:
+  - type: article
+    title: "The Theory of Temporal Spheres"
+    authors:
+      - family-names: "Moss"
+        given-names: "Eva"
+      - family-names: "Luminet"
+        given-names: "Jean-Pierre"
+    year: 2026
+    notes: "v3.0, submitted"
+  - type: report
+    title: "From Dodecahedron to E8: A Dictionary between Cosmic Topology and Exceptional Geometry"
+    authors:
+      - family-names: "Moss"
+        given-names: "Eva"
+    year: 2026
+    doi: 10.5281/zenodo.19490216
+  - type: report
+    title: "The Subgroup Ladder is the Chinese Remainder Theorem: Base 60 as the Canonical Coordinate of 2I"
+    authors:
+      - family-names: "Moss"
+        given-names: "Eva"
+    year: 2026
+    doi: 10.5281/zenodo.20135714

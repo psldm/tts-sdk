@@ -1,0 +1,9 @@
+# Pinned to the versions used for the published TTS v3.0 runs (Python 3.12).
+numpy==2.5.1
+scipy==1.18.0
+pandas==3.0.3
+matplotlib==3.11.0
+seaborn==0.13.2
+healpy==1.19.0
+tqdm==4.68.3
+joblib==1.5.3

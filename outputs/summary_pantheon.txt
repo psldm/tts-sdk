@@ -1,0 +1,112 @@
+DODECAHEDRAL H0 ANISOTROPY — FULL ANALYSIS PIPELINE
+Started: 2026-07-19 14:08:10
+Catalog: pantheon
+Output directory: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs
+Generated 12 dodecahedron face normals
+
+Loading Pantheon+ catalog...
+  Total SNe in file: 1701
+  SNe with z < 0.1:  741
+  z range: [0.0012, 0.0995]
+  Covariance: (741, 741)
+
+########################################################################
+  CATALOG: Pantheon+
+########################################################################
+
+========================================================================
+  STEP 1: SECTOR ASSIGNMENT
+========================================================================
+  Sector  0:  37 SNe
+  Sector  1:  29 SNe
+  Sector  2:  57 SNe
+  Sector  3:   7 SNe
+  Sector  4:  80 SNe
+  Sector  5:  31 SNe
+  Sector  6:  59 SNe
+  Sector  7:  77 SNe
+  Sector  8: 112 SNe
+  Sector  9:  61 SNe
+  Sector 10: 137 SNe
+  Sector 11:  54 SNe
+
+========================================================================
+  STEP 2: H0 FITTING PER SECTOR
+========================================================================
+
+  Sector  N_SNe        H0       -1σ       +1σ    χ²_min
+  ----------------------------------------------------------
+       0     37     71.26      1.00      1.02     12.58
+       1     29     70.00      1.14      1.16     77.31
+       2     57     71.24      0.69      0.70     43.44
+       3      7     71.98      2.12      2.19      1.69
+       4     80     70.14      0.65      0.65     81.07
+       5     31     71.62      1.01      1.03     48.21
+       6     59     71.14      0.75      0.76     45.87
+       7     77     72.05      0.67      0.68     85.15
+       8    112     70.25      0.58      0.59     79.74
+       9     61     71.69      0.71      0.72     56.71
+      10    137     69.77      0.46      0.46    263.73
+      11     54     73.69      0.91      0.92     37.77
+
+  Mean H0:           71.24 km/s/Mpc
+  Std dev (sectors): 1.11 km/s/Mpc
+  Max H0:            73.69 km/s/Mpc  (Sector 11)
+  Min H0:            69.77 km/s/Mpc  (Sector 10)
+  Delta H0:          3.92 km/s/Mpc
+  Modulation ε:      0.0275  (2.8%)
+
+========================================================================
+  STEP 3: MONTE CARLO SIGNIFICANCE TEST
+========================================================================
+Running 1000 Monte Carlo simulations...
+  Valid mocks: 1000/1000
+
+  Observed delta_H0:        3.92 km/s/Mpc
+  Mock mean delta_H0:        3.22 km/s/Mpc
+  Mock std delta_H0:         1.14 km/s/Mpc
+  Z-score:                   0.61σ
+  P-value (one-sided):       0.215000
+  P-value (two-sided):       0.514000
+  Conclusion: NOT SIGNIFICANT at α = 0.05
+
+  MC results saved to: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/mc_pantheon.npz
+
+========================================================================
+  STEP 4: REDSHIFT CUT STABILITY
+========================================================================
+
+     z_max   N_SNe    Delta_H0
+  ------------------------------
+    0.0200     265       12.70
+    0.0288     448        5.60
+    0.0377     576        4.51
+    0.0465     627        4.05
+    0.0553     666        3.55
+    0.0642     687        3.86
+    0.0730     711        3.79
+    0.0818     729        3.92
+    0.0907     737        3.92
+    0.0995     741        3.92
+
+========================================================================
+  STEP 5: VISUALIZATION
+========================================================================
+Generating Mollweide sky map...
+  Saved: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/fig_pantheon_mollweide.[pdf,png]
+Generating H0 bar chart...
+  Saved: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/fig_pantheon_h0_bars.[pdf,png]
+Generating MC distribution...
+  Saved: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/fig_pantheon_mc_dist.[pdf,png]
+Generating z-cut stability plot...
+  Saved: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/fig_pantheon_zcut.[pdf,png]
+Generating summary figure...
+  Saved: /Users/air_eva/Desktop/tts_sdk/dodeca-h0/src/../outputs/fig_pantheon_summary.[pdf,png]
+
+  [Pantheon+] Runtime: 242.5 seconds
+
+========================================================================
+  FINAL SUMMARY
+========================================================================
+Total runtime: 242.8 seconds
+========================================================================
