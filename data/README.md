@@ -12,11 +12,33 @@ wget https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Panthe
 wget https://raw.githubusercontent.com/PantheonPlusSH0ES/DataRelease/main/Pantheon%2B_Data/4_DISTANCES_AND_COVAR/Pantheon%2BSH0ES_STAT%2BSYS.cov
 ```
 
+Reference checksums (recorded in the 2026-08-04 audit, `REPORT_circle_search.md`
+§1.2; files verified identical to the DataRelease copies at upstream commit
+`c447f0f`):
+
+| file | bytes | md5 |
+| --- | --- | --- |
+| `Pantheon+SH0ES.dat` | 579,283 | `2049b142e6aad384470b3364aa10f3fa` |
+| `Pantheon+SH0ES_STAT+SYS.cov` | 33,284,960 | `041bdb6638841794fc2d7caa88dd66eb` |
+
 ## Planck SMICA CMB map (required for the matched-circle search)
 
 `COM_CMB_IQU-smica_2048_R3.00_full.fits` from the
 [Planck Legacy Archive](https://pla.esac.esa.int/) (Maps → CMB maps → SMICA,
 PR3/2018 release, ~2 GB).
+
+**This 2 GB map is not shipped in the repository** (`data/*` is git-ignored).
+Download it from the PLA into this `data/` directory before running
+`src/matched_circles.py`. Verify the file after download — an incomplete
+download fails to load and the code then silently falls back to a synthetic
+map (see the warning it prints):
+
+| file | bytes | md5 |
+| --- | --- | --- |
+| `COM_CMB_IQU-smica_2048_R3.00_full.fits` | 2,013,312,960 | `ee2fc49a2eb70c2eca0d582e4aae5d05` |
+
+FITS header of the reference copy: `NSIDE=2048`, `ORDERING='NESTED'`,
+`COORDSYS='GALACTIC'`, `DATE='2018-04-10'`, field 0 = `I_STOKES` in `K_CMB`.
 
 ## Union3 (optional, `run_all.py --catalog union3`)
 

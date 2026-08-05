@@ -1,0 +1,104 @@
+=== R3 run: NSIDE=128, GAL_CUT=20.0, alpha=[10, 15, 20, 25, 30, 35, 40, 45, 50], twist step 1.0 (360 values), N_SIM=50, seeds: data 42, sims 100+i ===
+start: 2026-08-04T20:35:39.180147
+map loaded: npix=196608, valid=129536 (65.9%), masked-map std(valid)=9.064910e-05 K
+[2026-08-04T20:35:42] R3 data | pair 1/6 | alpha=10 | iter 360/991440 (0.0%) | run max r=0.2011 | elapsed 4s | remaining ~9883s
+
+DATA per-pair best:
+  pair 1: r=0.340416 at alpha=15, twist=197 | zero-cell fraction 0.000
+  pair 2: r=0.328796 at alpha=15, twist=246 | zero-cell fraction 0.000
+  pair 3: r=0.694088 at alpha=30, twist=264 | zero-cell fraction 0.362
+  pair 4: r=0.815240 at alpha=25, twist=115 | zero-cell fraction 0.362
+  pair 5: r=0.608090 at alpha=50, twist=347 | zero-cell fraction 0.006
+  pair 6: r=0.836802 at alpha=45, twist=6 | zero-cell fraction 0.006
+DATA best overall: pair 6, alpha=45, twist=6, r=0.836802
+  sim  1/50: max r = 0.868349 (pair 4)
+  sim  2/50: max r = 0.837625 (pair 6)
+  sim  3/50: max r = 0.895416 (pair 3)
+  sim  4/50: max r = 0.903571 (pair 6)
+  sim  5/50: max r = 0.895626 (pair 4)
+  sim  6/50: max r = 0.878568 (pair 5)
+  sim  7/50: max r = 0.866123 (pair 6)
+[2026-08-04T20:36:37] R3 sim 8/50 | pair 6/6 | alpha=40 | iter 174240/991440 (17.6%) | run max r=0.9531 | elapsed 59s | remaining ~275s
+  sim  8/50: max r = 0.953121 (pair 4)
+  sim  9/50: max r = 0.913345 (pair 4)
+  sim 10/50: max r = 0.844787 (pair 4)
+  sim 11/50: max r = 0.967815 (pair 3)
+  sim 12/50: max r = 0.884911 (pair 3)
+  sim 13/50: max r = 0.890602 (pair 3)
+  sim 14/50: max r = 0.836949 (pair 4)
+  sim 15/50: max r = 0.863021 (pair 5)
+  sim 16/50: max r = 0.892848 (pair 5)
+[2026-08-04T20:37:32] R3 sim 17/50 | pair 6/6 | alpha=35 | iter 348840/991440 (35.2%) | run max r=0.9834 | elapsed 114s | remaining ~210s
+  sim 17/50: max r = 0.983428 (pair 3)
+  sim 18/50: max r = 0.922535 (pair 4)
+  sim 19/50: max r = 0.808863 (pair 4)
+  sim 20/50: max r = 0.981877 (pair 4)
+  sim 21/50: max r = 0.853768 (pair 4)
+  sim 22/50: max r = 0.929471 (pair 3)
+  sim 23/50: max r = 0.903363 (pair 4)
+  sim 24/50: max r = 0.853832 (pair 4)
+  sim 25/50: max r = 0.837142 (pair 3)
+[2026-08-04T20:38:27] R3 sim 26/50 | pair 6/6 | alpha=20 | iter 522720/991440 (52.7%) | run max r=0.9834 | elapsed 169s | remaining ~151s
+  sim 26/50: max r = 0.921226 (pair 4)
+  sim 27/50: max r = 0.828297 (pair 3)
+  sim 28/50: max r = 0.819523 (pair 3)
+  sim 29/50: max r = 0.909507 (pair 4)
+  sim 30/50: max r = 0.949443 (pair 3)
+  sim 31/50: max r = 0.911116 (pair 6)
+  sim 32/50: max r = 0.973644 (pair 4)
+  sim 33/50: max r = 0.905373 (pair 6)
+  sim 34/50: max r = 0.906691 (pair 3)
+[2026-08-04T20:39:23] R3 sim 35/50 | pair 5/6 | alpha=50 | iter 696600/991440 (70.3%) | run max r=0.9834 | elapsed 224s | remaining ~95s
+  sim 35/50: max r = 0.825421 (pair 4)
+  sim 36/50: max r = 0.911203 (pair 4)
+  sim 37/50: max r = 0.960850 (pair 5)
+  sim 38/50: max r = 0.878125 (pair 4)
+  sim 39/50: max r = 0.932537 (pair 3)
+  sim 40/50: max r = 0.962404 (pair 4)
+  sim 41/50: max r = 0.915450 (pair 4)
+  sim 42/50: max r = 0.879857 (pair 3)
+  sim 43/50: max r = 0.809545 (pair 3)
+[2026-08-04T20:40:18] R3 sim 44/50 | pair 4/6 | alpha=35 | iter 867240/991440 (87.5%) | run max r=0.9834 | elapsed 279s | remaining ~40s
+  sim 44/50: max r = 0.916126 (pair 5)
+  sim 45/50: max r = 0.959687 (pair 3)
+  sim 46/50: max r = 0.842371 (pair 3)
+  sim 47/50: max r = 0.890879 (pair 4)
+  sim 48/50: max r = 0.893001 (pair 5)
+  sim 49/50: max r = 0.920934 (pair 5)
+  sim 50/50: max r = 0.874689 (pair 6)
+
+=== R3 SIGNIFICANCE ===
+observed max r = 0.836802
+sim mean = 0.895297, sim std = 0.046425
+p = count(sim >= obs)/N = 45/50 = 0.9000
+z = (obs - mean)/std = (0.836802 - 0.895297)/0.046425 = -1.2600
+pds_alpha_ok=False, pds_twist_ok=False
+
+GATES:
+  exact-1.0 in data scan: False; in sim maxima: False
+  sim std = 0.046425 (>0 required)
+  pair 1 zero-cell fraction (data): 0.000
+  pair 2 zero-cell fraction (data): 0.000
+  pair 3 zero-cell fraction (data): 0.362
+  pair 4 zero-cell fraction (data): 0.362
+  pair 5 zero-cell fraction (data): 0.006
+  pair 6 zero-cell fraction (data): 0.006
+
+R3: data r at exact twist=36 (rows=pairs, cols=alpha 10..50):
+[[ 0.0944  0.0566  0.1169  0.1011  0.0327 -0.0056 -0.1157 -0.0304 -0.1692]
+ [-0.3899 -0.0015 -0.0425  0.0621  0.0826 -0.0044  0.0679 -0.0018 -0.1722]
+ [ 0.      0.      0.      0.16   -0.2481 -0.1179 -0.0115  0.0156 -0.109 ]
+ [ 0.      0.      0.     -0.0083  0.0803  0.1522 -0.0093 -0.1216 -0.0344]
+ [-0.0485  0.1892 -0.1303  0.1029  0.1397  0.0589 -0.2433  0.2142 -0.3549]
+ [-0.1672 -0.3395 -0.4134 -0.1788 -0.2944 -0.1389 -0.0823 -0.0604 -0.4014]]
+R3: data r at exact twist=324 (-36):
+[[ 0.0097 -0.1539 -0.0839  0.1187 -0.0452  0.1047 -0.0933 -0.1995  0.1789]
+ [ 0.0674  0.0041  0.0737 -0.1121 -0.0173 -0.1901 -0.2346  0.024  -0.2114]
+ [ 0.      0.      0.      0.4784 -0.1053  0.1832  0.0454 -0.0955  0.0968]
+ [ 0.      0.      0.     -0.2112  0.0136 -0.3382  0.0904  0.1452 -0.1429]
+ [ 0.071   0.0163 -0.1423 -0.2163  0.3725  0.1487 -0.2384 -0.0192  0.048 ]
+ [-0.1408  0.0605 -0.1656 -0.0424 -0.0436  0.0586  0.078  -0.0062 -0.0221]]
+
+saved: /Users/air_eva/Desktop/tts_sdk/tts-sdk/outputs/matched_circles_R3.npz
+figures: /Users/air_eva/Desktop/tts_sdk/tts-sdk/outputs/fig_R3_corr_vs_alpha/_corr_vs_twist/_sim_dist/_cmb_circles .pdf/.png
+end: 2026-08-04T20:40:58.266934; elapsed 319.1 s

@@ -23,3 +23,11 @@ data/*
 outputs/*
 !outputs/summary*.txt
 !outputs/.gitkeep
+
+# Matched-circle verification results (2026-08-04 runs R2/R3; small, tracked)
+!outputs/matched_circles_R2.npz
+!outputs/matched_circles_R3.npz
+!outputs/fig_R2_*.pdf
+!outputs/fig_R2_*.png
+!outputs/fig_R3_*.pdf
+!outputs/fig_R3_*.png

@@ -58,6 +58,64 @@ quadrupole suppression S₂ = 0.212 and parity ratio R_oe = 1.067 at
 Ω_tot = 1.0155, and verify the Molien series of I* against its closed form
 up to k = 200.
 
+## Matched-circle search
+
+Verification runs of 2026-08-04 on the Planck PR3 SMICA temperature map
+(NSIDE 2048 → 128, |b| ≥ 20° Galactic cut; map checksum in
+[data/README.md](data/README.md)). Full records, per-pair tables, all 50
+simulation maxima, and caveats: [RESULTS_circle_search.md](RESULTS_circle_search.md).
+Run scripts, full console logs, and the pre-run audit:
+[verification/2026-08-04/](verification/2026-08-04/).
+
+| Quantity | R2 (twist step 5°) | R3 (twist step 1°) |
+| --- | --- | --- |
+| Observed max r | 0.815240 (α=25°, φ=115°, pair 4) | 0.836802 (α=45°, φ=6°, pair 6) |
+| Simulation mean ± std (N=50) | 0.854808 ± 0.059035 | 0.895297 ± 0.046425 |
+| p = count(sim ≥ obs)/50 | 38/50 = 0.76 | 45/50 = 0.90 |
+| z | −0.67 | −1.26 |
+| Max r at exact φ = +36° | (36° not on grid) | 0.2142 |
+| Max r at exact φ = −36° (324°) | (not on grid) | 0.4784 |
+| Wall-clock (Apple M2, 1 core) | 69.5 s | 319.1 s |
+
+No matched-circle signal is detected at any scanned α (10°–50°), phase
+(R3: 0°–359° in 1° steps, ±36° on grid), or axis pair.
+
+Reproduce R2 (this is exactly the script's default configuration; writes
+`outputs/matched_circles.npz` and unsuffixed `fig_*` files):
+
+```bash
+python src/matched_circles.py
+```
+
+Reproduce R3 (same functions, twist step 1.0°, same seeds):
+
+```bash
+python - <<'PY'
+import sys, numpy as np
+sys.path.insert(0, 'src')
+from matched_circles import (load_or_generate_cmb_map, apply_cmb_mask,
+    get_dodecahedron_axes, search_all_axes, run_simulations,
+    compute_significance)
+NSIDE, ALPHA, STEP = 128, np.arange(10, 51, 5), 1.0
+cmb = load_or_generate_cmb_map(nside=NSIDE, random_seed=42,
+    data_path='data/COM_CMB_IQU-smica_2048_R3.00_full.fits')
+m, mask = apply_cmb_mask(cmb, gal_cut=20.0)
+axes = get_dodecahedron_axes()
+res = search_all_axes(m, axes, ALPHA, NSIDE, mask=mask, twist_step=STEP)
+best = max(res, key=lambda r: r['corr_best'])
+sims = run_simulations(50, NSIDE, axes, ALPHA, mask=mask,
+    twist_step=STEP, random_seed=100)
+sig = compute_significance(best['corr_best'], sims)
+print(f"max r={best['corr_best']:.6f} at alpha={best['alpha_best']:.0f}, "
+      f"twist={best['twist_best']:.0f}; p={sig['p_value']:.4f}, "
+      f"z={sig['z_score']:.4f}")
+PY
+```
+
+Both runs require the intact SMICA map in `data/` (md5-verify it per
+data/README.md): if the file is missing or unreadable the script falls back
+to a synthetic map and the result does not test real data.
+
 ## Repository structure
 
 ```text

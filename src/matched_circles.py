@@ -176,7 +176,9 @@ def load_or_generate_cmb_map(
                 cmb_map = hp.ud_grade(cmb_map, nside_out=nside)
             return cmb_map
         except Exception as e:
+            import traceback
             print(f"      Warning: Could not load Planck map: {e}")
+            traceback.print_exc()
             print("      Falling back to synthetic map...")
 
     lmax = 3 * nside
@@ -310,6 +312,10 @@ def circle_correlation(
         T1 = T1[valid]
         T2_shifted = T2_shifted[valid]
     common = np.isfinite(T1) & np.isfinite(T2_shifted)
+    # Explicitly exclude HEALPix UNSEEN sentinel (np.isfinite does not catch it)
+    UNSEEN = -1.6375e30
+    common &= (np.abs(T1 - UNSEEN) > 1e20) & (np.abs(T2_shifted - UNSEEN) > 1e20)
+    common &= (np.abs(T1) < 1e10) & (np.abs(T2_shifted) < 1e10)
     if common.sum() < 10:
         return 0.0
     corr, _ = pearsonr(T1[common], T2_shifted[common])
