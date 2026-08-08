@@ -215,7 +215,7 @@ For comparison, the simulation mean of the *maximum* statistic is 0.8953.
 | Field | Value |
 | --- | --- |
 | Label | `tts-sdk` `matched_circles.py` (commit `fc50da3` + UNSEEN filter), runs R2/R3, 2026-08-04 |
-| Data (map, release) | Planck PR3 (R3.00) SMICA temperature (`I_STOKES`, `K_CMB`; file md5 `ee2fc49a2eb70c2eca0d582e4aae5d05`), NSIDE 2048 → 128, Galactic |b| ≥ 20° cut; no beam or noise treatment |
+| Data (map, release) | Planck PR3 (R3.00) SMICA temperature (`I_STOKES`, `K_CMB`; file md5 `ee2fc49a2eb70c2eca0d582e4aae5d05`), NSIDE 2048 → 128, Galactic \|b\| ≥ 20° cut; no beam or noise treatment |
 | Statistic | max Pearson r between two 360-point interpolated circles; maximized over α, twist, 6 axis pairs |
 | α coverage | 10°–50°, step 5° |
 | Phase coverage | R2: 0°–355°, step 5°; R3: 0°–359°, step 1° — **+36° and −36° (324°) exact grid points in R3** |

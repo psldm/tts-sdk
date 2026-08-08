@@ -6,7 +6,7 @@
 
 **Eva Moss** (RAD Systems) · **Jean-Pierre Luminet** (CNRS / LUTH, Observatoire de Paris)
 
-Supplementary code for *"The Theory of Temporal Spheres"* (TTS v3.0), submitted.
+Supplementary code for *"The Theory of Temporal Spheres"* (TTS v3.1), submitted.
 
 ## Abstract
 
@@ -53,7 +53,7 @@ the paper. A full-sky template fit marginalised over orientation is the
 natural next step.
 
 The theoretical tables (`tts_tables.py`) reproduce the published values of
-TTS v3.0 Table 4 (Sachs–Wolfe approximation, k_max = 250), including the
+TTS v3.1 Table 4 (Sachs–Wolfe approximation, k_max = 250), including the
 quadrupole suppression S₂ = 0.212 and parity ratio R_oe = 1.067 at
 Ω_tot = 1.0155, and verify the Molien series of I* against its closed form
 up to k = 200.
@@ -127,7 +127,7 @@ tts-sdk/
 │   ├── visualize.py        # publication figures (Mollweide, bars, MC, summary)
 │   ├── run_all.py          # end-to-end pipeline (Pantheon+ / Union3)
 │   ├── audit.py            # self-audit: 7 blocks of internal consistency checks
-│   ├── tts_tables.py       # Tables 1-4 of TTS v3.0 from first principles
+│   ├── tts_tables.py       # Tables 1-4 of TTS v3.1 from first principles
 │   ├── matched_circles.py  # CMB matched-circle search (Planck SMICA, π/5 twist)
 │   ├── rbsg08.py           # Roukema et al. (2008) cross-correlation test (synthetic map)
 │   ├── cosmicflows.py      # CosmicFlows-4 peculiar-velocity cross-check
@@ -208,7 +208,7 @@ If you use this code, please cite:
   author  = {Moss, Eva and Luminet, Jean-Pierre},
   title   = {The Theory of Temporal Spheres},
   year    = {2026},
-  note    = {v3.0, submitted}
+  note    = {v3.1, submitted}
 }
 
 @misc{Moss2026E8,
